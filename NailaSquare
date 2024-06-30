@@ -1,0 +1,42 @@
+
+public class NailaSquare extends LinearOpMode {
+    DcMotor motorLeft;
+    DcMotor motorRight;
+    DcMotor frontLeft;
+    DcMotor frontRight;
+    ColorSensor color1;
+    DistanceSensor distance1;
+    BNO055IMU imu;
+
+
+    public void runOpMode() {
+      motorLeft = hardwareMap.get(DcMotor.class, "motorLeft");
+      motorRight = hardwareMap.get(DcMotor.class, "motorRight");
+      frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
+      frontRight = hardwareMap.get(DcMotor.class, "frontRight");
+      color1 = hardwareMap.get(ColorSensor.class, "color1");
+      distance1 = hardwareMap.get(DistanceSensor.class, "distance1");
+      imu = hardwareMap.get(BNO055IMU.class, "imu");
+      // Put initialization blocks here
+      waitForStart();
+      // Put run blocks here
+      while (opModeIsActive()) {
+          
+         frontLeft.setPower(0.7);
+         frontRight.setPower(0.7);
+         motorLeft.setPower(-0.7);
+         motorRight.setPower(0.7);
+          sleep(3000);
+          
+          frontLeft.setPower(0.7);
+         frontRight.setPower(-0.7);
+         motorLeft.setPower(-0.7);
+         motorRight.setPower(-0.7);
+          sleep(650);
+          
+      }
+    }
+    
+}  
+          
+          
