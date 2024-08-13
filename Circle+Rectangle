@@ -1,0 +1,19 @@
+package domain;
+
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        
+        Rectangle x = new Rectangle();
+        x.length = 14;
+        x.width = 3;
+        System.out.println("area = "+ x.area());
+        System.out.println("perimeter = "+ x.perimeter());
+        
+        Circle y = new Circle();
+        y.radius = 4;
+        y.diameter = 6.832;
+        System.out.println("The area of a Circle = " + y.area());
+    }
+
+}
